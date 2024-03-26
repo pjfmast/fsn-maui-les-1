@@ -63,13 +63,19 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Compile Update="Pages\MarginSpacingDemoPage.xaml.cs">
+	    <DependentUpon>MarginSpacingDemoPage.xaml</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
 	  <MauiXaml Update="Pages\BindingDemoPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Pages\GridDemoPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Pages\MarginSpacingPaddingDemoPage.xaml">
+	  <MauiXaml Update="Pages\MarginSpacingDemoPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Pages\StackDemoPage.xaml">
