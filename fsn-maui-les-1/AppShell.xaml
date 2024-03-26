@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="fsn_maui_les_1.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:fsn_maui_les_1.Pages"
+    Shell.FlyoutBehavior="Disabled"
+    Title="fsn_maui_les_1">
+
+    <TabBar>
+        <ShellContent Title="Stack"
+                      ContentTemplate="{DataTemplate local:StackDemoPage}" />
+        <ShellContent Title="Grid" Icon="grid.png" 
+                      ContentTemplate="{DataTemplate local:GridDemoPage}" />
+        <ShellContent Title="Spacing" 
+                      ContentTemplate="{DataTemplate local:MarginSpacingPaddingDemoPage}" />
+        <ShellContent Title="Binding" 
+                      ContentTemplate="{DataTemplate local:BindingDemoPage}" />
+    </TabBar>
+</Shell>

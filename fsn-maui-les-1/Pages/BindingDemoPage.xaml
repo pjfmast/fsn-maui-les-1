@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="fsn_maui_les_1.Pages.BindingDemoPage"
+              xmlns:sys="clr-namespace:System;assembly=netstandard"
+             xmlns:converters="clr-namespace:fsn_maui_les_1.Converters"
+             xmlns:local="clr-namespace:fsn_maui_les_1.ViewModels"
+             x:DataType="local:BindingDemoViewModel"
+             Title="BindingDemoPage">
+    <ContentPage.BindingContext>
+        <local:BindingDemoViewModel />
+    </ContentPage.BindingContext>
+    
+
+    <VerticalStackLayout Padding="20">
+        <VerticalStackLayout.Resources>
+            <converters:DateTimeToDateOnlyConverter x:Key="DateTimeDateOnly"/>
+        </VerticalStackLayout.Resources>
+
+        <Label Text="Day of birth:"  />
+        <DatePicker Date="{Binding DayOfBirth, Mode=TwoWay, Converter={StaticResource Key=DateTimeDateOnly}}"
+                    MaximumDate="{x:Static sys:DateTime.Now }"/>
+
+        <Entry Text="{Binding SurName}" Placeholder="Enter surname" />
+        <Entry Text="{Binding LastName}" Placeholder="Enter lastname" />
+        <Label Text="Font Size:"  />
+        <Slider x:Name="sliderFontSize"
+                Maximum="48"
+                Minimum="6"
+                Value="12" />
+        <Label Text="Rotate:" />
+        <Slider x:Name="sliderRotate"
+                Maximum="360"
+                Minimum="-360"
+                Value="0" />
+        <Label Text="{Binding DisplayName}"
+               VerticalOptions="CenterAndExpand"
+               HorizontalOptions="Center"
+               FontSize="{Binding Source={x:Reference sliderFontSize}, Path=Value}"
+               Rotation="{Binding Source={x:Reference sliderRotate}, Path=Value}"/>
+    </VerticalStackLayout>
+</ContentPage>
